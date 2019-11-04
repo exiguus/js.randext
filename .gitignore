@@ -1,0 +1,16 @@
+.idea
+.sass-cache/
+node_modules/
+bower_components/
+coverage/
+!docs/coverage/**
+TODO.md
+Thumbs.db
+.DS_Store
+*.psd
+*.sketch
+*.lock
+*.iml
+
+# directories
+Source/

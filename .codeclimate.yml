@@ -1,0 +1,24 @@
+exclude_patterns:
+- "tests/"
+- "build/"
+- "coverage/"
+- "tests/"
+- "dist/"
+- "docs/"
+- "node_modules/"
+- "."
+- "Gruntfile.js"
+- "*.md"
+- "LICENSE"
+- "package*"
+- "*.test.js"
+- "*.spec.js"
+plugins:
+  eslint:
+    enabled: true
+    config:
+      config: .eslintrc
+  git-legal:
+    enabled: true
+
+

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/style.css" />
+        <title>randext.js () => r/char/matrix () => text</title>
+    </head>
+    <body>
+        <header>
+          <h1>randext.js</h1>
+        </header>
+
+        <main>
+          <article>
+            <div data-randext>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores reiciendis qui
+              facilis minus laudantium, aliquid, vitae odit quisquam ratione accusamus assumenda? Beatae voluptatem fuga
+              ducimus soluta accusamus autem blanditiis eius.
+            </div>
+          </article>
+        </main>
+        <script type="text/javascript" src="../dist/randext.min.js"></script>
+        <script type="text/javascript">
+          var text = new window.Randext.default({
+            element: document.querySelector('[data-randext]'),
+            possible: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.',
+            interval: 60,
+          });
+          text.start();
+        </script>
+    </body>
+</html>

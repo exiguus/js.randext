@@ -1,0 +1,169 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+          <article>
+            <section>
+              <p>
+                A
+                <span data-randext-async>Highly Flexible</span>,
+                <span data-randext-async>Performant</span>,
+                <span data-randext-async>Accessible</span> &amp;
+                <span data-randext-async>Customizeable</span>
+                JavaScript Library.
+              </p>
+            </section>
+            <section>
+              <h2 data-randext-async="3600">NPM</h2>
+              <dl class="install">
+                <dt data-randext-async="3600">installation</dt>
+                <dd><code data-randext-async>npm install randext --save</code></dd>
+              </dl>
+
+              <h2 data-randext-async="3600">GIT</h2>
+              <dl class="download">
+                <dt>ZIP</dt>
+                <dd><a data-randext-async href="https://github.com/exiguus/js.randext/archive/v1.0.0.zip"
+                    title="Github Release ZIP"><code>https://github.com/exiguus/js.randext/archive/v1.0.0.zip</code></a>
+                </dd>
+                <dt>GZIP</dt>
+                <dd><a data-randext-async href="https://github.com/exiguus/js.randext/archive/v1.0.0.tar.gz"
+                    title="Github Release GZIP"><code>https://github.com/exiguus/js.randext/archive/v1.0.0.tar.gz</code></a>
+                </dd>
+
+              </dl>
+            </section>
+            <section>
+
+            <h2 data-randext-async="3600">Usage</h2>
+
+            <h3 data-randext-async="3600">ES Module</h3>
+<pre>
+<code>
+{{ "
+import Randext from 'randext';
+
+const randext = new Randext({
+  element: document.querySelect('[data-randext]'),
+  interval: 60,
+  ignore: '-_,;:./()[]{}<>\\\'\"`#$%&@€!?',
+  style: ['small', 'underlined', 'strong'],
+  callback: () => {},
+});
+
+randext.start();
+" | escape }}
+</code>
+</pre>
+
+            <h3>UMD Module</h3>
+<pre>
+<code>
+{{ "<script type=\"text/javascript\" src=\"node_modules/js.randext/dist/randext.min.js\"></script>
+<script type=\"text/javascript\">
+  var randrext = new window.Randext.default({
+    element: document.querySelect('[data-randext]'),
+    interval: 60,
+    ignore: '-_,;:./()[]{}<>\\\'\"`#$%&@€!?',
+    style: ['small', 'underlined', 'strong'],
+    callback: () => {},
+  });
+
+  randext.start();
+</script>" | escape }}
+</code>
+</pre>
+
+            <h3>CSS</h3>
+<pre>
+<code>
+{{ '
+
+[data-randext] {
+  display: block;
+  margin-bottom: 1em;
+  unicode-bidi: embed;
+  font-family: inherit;
+  font-size: 1em;
+  letter-spacing: .064em;
+  line-height: 1.875em;
+  white-space: pre-line;
+  width: 100%;
+  color: inherit;
+}
+' | escape }}
+</code>
+</pre>
+<pre>
+<code>
+{{ '
+[data-randext] {
+  opacity: 0;
+}
+
+[data-randext="true"] {
+  opacity: 1;
+}
+
+[data-randext-char] {
+  display: inline-block;
+  width: .65em;
+  height: 1.66em;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  line-height: 1.6em;
+  vertical-align: middle;
+}
+
+[data-randext-char-active="true"] {
+  font-weight: bold;
+  opacity: 1;
+}
+' | escape }}
+</code>
+</pre>
+
+            <h3>ES Module Callback &mdash; Generator, yield, next()</h3>
+<pre>
+<code>
+{{"
+import Randext from 'randext';
+
+const elements = document.querySelectorAll('[data-randext]');
+
+function* init(configs) {
+  for (let i = 0; i < configs.length; i++) {
+    yield emit(configs[i]);
+  }
+}
+
+function emit(config) {
+  config.instance.start();
+}
+
+const configs = [];
+
+elements.forEach( (element) => {
+  configs.push({
+    instance: null,
+    settings: {
+      element: element,
+      callback: () => text.next(),
+    },
+  });
+});
+
+configs.forEach( (config) => {
+  config.instance = new Randext(config.settings);
+  config.instance.init();
+});
+
+const text = init(configs);
+text.next();
+
+" | escape }}
+</code>
+</pre>
+            </section>
+          </article>
+{% endblock %}

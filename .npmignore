@@ -1,0 +1,17 @@
+build/
+node_modules/
+static/
+target/
+coverage/
+tests/
+.git
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.npmrc
+.npmignore
+.codeclimate.yml
+.travis.yml
+Gruntfile.js
+package-lock.json
