@@ -2,7 +2,7 @@
 [![coverage][coverage]][coverage-url]
 [![maintainability][maintainability]][maintainability-url]
 
-# randext
+# Randext
 A programable, random letter animation effect to display text messages.
 
 ## Usage
@@ -31,7 +31,7 @@ randrix.start();
 ```javascript
 <script type="text/javascript" src="node_modules/js.randext/dist/randext.min.js"></script>
 <script type="text/javascript">
-  var randrext = new window.Randext.default({
+  var randext = new window.Randext.default({
     element: document.querySelect('[data-randext]'),
     interval: 60,
     ignore: '-_,;:./()[]{}<>\'"`#$%&@€!?',
